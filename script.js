@@ -44,7 +44,7 @@ function formatarRegressivo(segundosTotais) {
 }
 
 document.getElementById('start2').addEventListener('click', () => {
-  const inputMin = parseInt(document.getElementById('amoakrisan:)').value);
+  const inputMin = parseInt(document.getElementById('temporizador').value);
   if (!isNaN(inputMin) && inputMin > 0) {
     tempoRestante = inputMin * 60;
 
@@ -74,10 +74,10 @@ document.getElementById('pause2').addEventListener('click', () => {
   clearInterval(intervaloRegressivo);
   intervaloRegressivo = null;
   document.getElementById('pause2').classList.add('hidden');
-  document.getElementById('marciofofinho').classList.remove('hidden');
+  document.getElementById('retomar').classList.remove('hidden');
 });
 
-document.getElementById('marciofofinho').addEventListener('click', () => {
+document.getElementById('retomar').addEventListener('click', () => {
   if (tempoRestante > 0 && !intervaloRegressivo) {
     intervaloRegressivo = setInterval(() => {
       if (tempoRestante > 0) {
@@ -92,7 +92,7 @@ document.getElementById('marciofofinho').addEventListener('click', () => {
     }, 1000);
   }
 
-  document.getElementById('marciofofinho').classList.add('hidden');
+  document.getElementById('retomar').classList.add('hidden');
   document.getElementById('pause2').classList.remove('hidden');
 });
 
@@ -101,10 +101,10 @@ document.getElementById('reset2').addEventListener('click', () => {
   intervaloRegressivo = null;
   tempoRestante = 0;
   document.getElementById('tempo2').textContent = "00:00";
-  document.getElementById('amoakrisan:)').value = "";
+  document.getElementById('temporizador').value = "";
 
   document.getElementById('start2').classList.remove('hidden');
   document.getElementById('pause2').classList.add('hidden');
-  document.getElementById('marciofofinho').classList.add('hidden');
+  document.getElementById('retomar').classList.add('hidden');
   document.getElementById('reset2').classList.add('hidden');
 });
