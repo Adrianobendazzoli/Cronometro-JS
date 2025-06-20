@@ -5,4 +5,99 @@
   width: 300px;
 }
 
-/* EU TE AMO BEATRIZ, MEU AMOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOR */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f2fa;
+    margin: 40px;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: #fff;
+    border: 2px solid #d4b3f0;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(120, 80, 160, 0.2);
+    padding: 30px 40px;
+    width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(120, 80, 160, 0.3);
+}
+
+.card h2 {
+    color: #6a1b9a;
+    margin-bottom: 20px;
+}
+
+.card input[type="text"] {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+.card button {
+    margin: 5px 5px 0 0;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #9c27b0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.card button:hover {
+    background-color: #7b1fa2;
+}
+
+.card p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0 20px;
+    color: #4a148c;
+}
+
+/*fundo animado*/
+
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+
+.icone {
+    width: 80px;
+    height: 80px;
+    background-image: url('../Cronometro-JS/icone.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: anima linear infinite;
+    animation-duration: calc(300s / var(--i));
+}
+
+@keyframes anima {
+    0%{
+        transform: translateY(100vh) scale(0) rotate(0deg);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1) rotate(360deg);
+    }
+}
